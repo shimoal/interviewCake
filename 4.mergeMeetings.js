@@ -13,7 +13,7 @@ function mergeMeetings(meetings) {
     var merged = false;
     
     finalSchedule.forEach(function(finalMeeting, j){
-      if (finalMeeting[1] >= meeting[0]) {
+      if (finalMeeting[1] >= meeting[0] && finalMeeting[0] <= meeting[1]) {
         finalSchedule[j] = merge(finalMeeting, meeting);
         merged = true;
       } 
