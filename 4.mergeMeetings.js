@@ -6,25 +6,26 @@
 
 
 function mergeMeetings(meetings) {
-  var finalSchedule = [];
 
-  for (var i = 0; i < meetings.length; i++) {
+  meetings.sort(function(meetingA, meetingB) {
+    return meetingA[0] > meetingB[0]
+  });
+
+  var i = 0;
+  while (i < meetings.length - 1) {
     var meeting = meetings[i];
-    var merged = false;
-    
-    finalSchedule.forEach(function(finalMeeting, j){
-      if (finalMeeting[1] >= meeting[0] && finalMeeting[0] <= meeting[1]) {
-        finalSchedule[j] = merge(finalMeeting, meeting);
-        merged = true;
-      } 
-    });
-    if (!merged) {
-      finalSchedule.push(meeting);
+    var nextMeeting = meetings[i+1];
+
+    if (nextMeeting[0] <= meeting[1]) {
+      meetings[i] = merge(nextMeeting, meeting);
+      meetings.splice(i+1, 1);
+    } else {
+      i++;
     }
   }
-
-  return finalSchedule;
+  return meetings;
 }
+
 
 function merge(meetingOne, meetingTwo) {
   return [Math.min(meetingOne[0], meetingTwo[0]), Math.max(meetingOne[1], meetingTwo[1])];
