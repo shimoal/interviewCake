@@ -14,28 +14,54 @@
 
 
 var TempTracker = function() {
+  this.min = null;
+  this.max = null;
+  this.mean = null;
+  this.mode = null;
+  this.totalNum = 0;
+  this.sumNums = 0;
+  this.occurances = {};
 
 }
 
 
-TempTracker.prototype.insert = function() {
+TempTracker.prototype.insert = function(val) {
+  if (!this.min || val < this.min) {
+    this.min = val;
+  }
 
+  if (!this.max || val > this.max) {
+    this.max = val;
+  }
+
+  if (!this.occurances[val]) {
+    this.occurances[val] = [];
+  }
+
+  this.occurances[val]++;
+
+  if (this.occurances[val] > this.mode) {
+    this.mode = val;
+  }
+
+  this.totalNum += 1;
+  this.sumNums += val;
 }
 
 TempTracker.prototype.get_max = function() {
-
+  return this.max;
 }
 
 TempTracker.prototype.get_min = function() {
-
+  return this.min;
 }
 
 TempTracker.prototype.get_mean = function() {
-
+  return this.sumNums / this.totalNum;
 }
 
 TempTracker.prototype.get_mode = function() {
-
+  return this.mode;
 }
 
 module.exports = TempTracker;
