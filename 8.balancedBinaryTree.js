@@ -14,7 +14,7 @@ function balancedBinaryTree(root) {
   //set current to root
   //push current into stack
 
-  //while stack is not empty
+  // while stack is not empty
   while (stack.length > 0) {
       current = stack.pop()[0];
     //while  current has left
@@ -36,11 +36,13 @@ function balancedBinaryTree(root) {
 
 
      if (current.left) {
-        stack.push([current.left, current[1] + 1);
+        var newEntry = [current.left, current[1] + 1];
+        stack.push(newEntry);
       }
 
     if (current.right) {
-      stack.push([current.right], current[1] + 1);
+      var newEntry = [current.right, current[1] + 1];
+      stack.push(newEntry);
     }
   }
 
