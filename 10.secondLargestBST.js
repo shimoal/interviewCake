@@ -6,8 +6,16 @@
 // A clean recursive implementation will take O(h) space in the call stack↴ , but we can bring our
 // algorithm down to O(1) space overall.
 
-function getSecondLargest() {
+function getSecondLargest(tree) {
+  if (!tree.right) {
+    return tree.left.val;
+  }
 
+  if (tree.right && !tree.right.right && !tree.right.left){
+    return tree.val;
+  }
+
+  return getSecondLargest(tree.right);
 }
 
 module.exports = getSecondLargest;
