@@ -7,8 +7,29 @@
 // You brought a duffel bag that can hold limited weight, and you want to make off with the most valuable haul possible.
 // Write a function max_duffel_bag_value() that takes an array of cake tuples and a weight capacity, and returns the maximum monetary value the duffel bag can hold.
 
-function cakeThief() {
+function cakeThief(cakes, weightCap) {
+  var maxWeights = [];
+  var currentWeightCap = 0;
+  while (currentWeightCap <= weightCap) {
+    var maxVal = 0;
+    cakes.forEach(function(cake) {
+      var cakeWeight = cake[0];
+      var cakeVal = cake[1];
 
+      if (cakeWeight <= currentWeightCap) {
+
+           var numberOfCakes = Math.floor(currentWeightCap / cakeWeight);
+           var currentVal = cakeVal * numberOfCakes;
+           var remainingWeight = currentWeightCap - (numberOfCakes * cakeWeight);
+           currentVal += maxWeights[remainingWeight]; 
+           maxVal = Math.max(maxVal, currentVal);        
+        }
+    });
+    maxWeights.push(maxVal);
+    currentWeightCap++;    
+  }
+
+   return maxWeights[weightCap];
 }
 
 module.exports = cakeThief;
