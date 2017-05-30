@@ -16,7 +16,7 @@ function cakeThief(cakes, weightCap) {
       var cakeWeight = cake[0];
       var cakeVal = cake[1];
 
-      if (cakeWeight <= currentWeightCap) {
+      if (cakeWeight && cakeWeight <= currentWeightCap) {
         var numberOfCakes = Math.floor(currentWeightCap / cakeWeight);
         var currentVal = cakeVal * numberOfCakes;
         var remainingWeight = currentWeightCap - (numberOfCakes * cakeWeight);
