@@ -1,6 +1,6 @@
 var chai = require('chai');
 var expect = chai.expect;
-var nthFib = require('../16.nthFib.js');
+var nthFib = require('../15.nthFib.js');
 
 describe('16.nthFib', function() {
   it('should be a function', function() {
