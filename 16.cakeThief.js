@@ -17,14 +17,14 @@ function cakeThief(cakes, weightCap) {
       var cakeVal = cake[1];
 
       if (cakeWeight <= currentWeightCap) {
-
-           var numberOfCakes = Math.floor(currentWeightCap / cakeWeight);
-           var currentVal = cakeVal * numberOfCakes;
-           var remainingWeight = currentWeightCap - (numberOfCakes * cakeWeight);
-           currentVal += maxWeights[remainingWeight]; 
-           maxVal = Math.max(maxVal, currentVal);        
-        }
+        var numberOfCakes = Math.floor(currentWeightCap / cakeWeight);
+        var currentVal = cakeVal * numberOfCakes;
+        var remainingWeight = currentWeightCap - (numberOfCakes * cakeWeight);
+        currentVal += maxWeights[remainingWeight]; 
+        maxVal = Math.max(maxVal, currentVal);        
+      }
     });
+
     maxWeights.push(maxVal);
     currentWeightCap++;    
   }
