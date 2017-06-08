@@ -1,8 +1,8 @@
 var chai = require('chai');
 var expect = chai.expect;
-var Queue = require('../20.stackWithTwoQs.js');
+var Queue = require('../19.stackWithTwoQs.js');
 
-describe('20.stackWithTwoQs', function() {
+describe('19.stackWithTwoQs', function() {
   it('should be a function', function() {
     expect(Queue).to.be.a('function');
   });
