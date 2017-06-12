@@ -4,25 +4,17 @@ function hasCycle(headOfList) {
   var fastRunner = headOfList; 
   var slowRunner = headOfList; 
 
-  var cycleFound = false; 
+  while (fastRunner.next !== null && fastRunner.next.next !== null) {
 
-  while (!cycleFound ) {
-
-    if (fastRunner.next === null || fastRunner.next.next === null ) {
-      return false;
-    }
-
-    
     fastRunner = fastRunner.next.next;
     slowRunner = slowRunner.next;
 
     if (fastRunner === slowRunner) {
-      cycleFound = true;
+      return true;
     }
-
   }
 
-  return cycleFound;
+  return false;
 }
 
 module.exports = hasCycle;
