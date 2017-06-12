@@ -13,11 +13,12 @@ LinkedList.prototype.addNodeToTail = function(val) {
   if (!this.head) {
     this.head = new Node(val);
     this.tail = this.head;
-    return;
+    return this.head;
   }
 
   this.tail.next = new Node(val);
   this.tail = this.tail.next;
+  return this.tail;
 
 };
 

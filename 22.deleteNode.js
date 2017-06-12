@@ -1,5 +1,6 @@
-function deleteNode(LinkedList, node) {
-
+function deleteNode(node) {
+  node.val = node.next.val;
+  node.next = node.next.next;
 }
 
 module.exports = deleteNode;

@@ -26,7 +26,14 @@ describe('deleteNode', function() {
   });
 
   it('should remove a node from the center of a linked list', function() {
-    
+    var list = new LinkedList();
+    var a = list.addNodeToTail('A');
+    var b = list.addNodeToTail('B');
+    var c = list.addNodeToTail('C');
+
+    deleteNode(b);
+
+    expect(a.next.val).to.equal('C');
 
   });
 });
