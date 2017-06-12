@@ -2,22 +2,30 @@
 // The IDs are not guaranteed to be sorted or sequential. Orders aren't always fulfilled in the order they were received, and some deliveries get cancelled before takeoff.
 
 function findMissingDrone(ids) {
-  var uniqueIDs = {};
+  // var uniqueIDs = {};
+
+  // ids.forEach(function(id) {
+  //   if (!uniqueIDs[id]) {
+  //     uniqueIDs[id] = 1;
+  //   } else {
+  //     delete uniqueIDs[id];
+  //   }
+
+  // });
+
+  // for (var id in uniqueIDs) {
+  //   return Number(id);
+  // }
+
+  // return null;
+
+  var uniqueId = 0;
 
   ids.forEach(function(id) {
-    if (!uniqueIDs[id]) {
-      uniqueIDs[id] = 1;
-    } else {
-      delete uniqueIDs[id];
-    }
-
+    uniqueId ^= id;
   });
 
-  for (var id in uniqueIDs) {
-    return Number(id);
-  }
-
-  return null;
+  return uniqueId;
 }
 
 module.exports = findMissingDrone;
