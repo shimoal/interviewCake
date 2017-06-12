@@ -20,7 +20,7 @@ describe('LinkedList', function() {
 });
 
 
-describe('deleteNode', function() {
+describe('22.deleteNode', function() {
   it('should be a function', function() {
     expect(deleteNode).to.be.a('function');
   });
