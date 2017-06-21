@@ -7,7 +7,7 @@ describe('26.reverseStringInPlace', function() {
     expect(reverseString).to.be.a('function');
   });
 
-  xit('should reverse a string with even number of letters', function() {
+  it('should reverse a string with even number of letters', function() {
     expect(reverseString('chattycat')).to.equal('tacyttahc');
   })
 })

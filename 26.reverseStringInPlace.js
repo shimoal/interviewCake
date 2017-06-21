@@ -10,15 +10,13 @@ function reverseStringInPlace(string) {
 }
 
 function swap(s, i1, i2) {
-  var swap2 = s.charAt(i1);
-  var swap1 = s.charAt(i2);
-  var beg = s.substr(0, i1);
-  var middle =  (i2 - i1 > 1) ? s.substr(i1 + 1, i2) : '';
-  var end = s.substr(i2 + 1);
+  var chars = s.split('');
+  var temp = chars[i1];
 
-  s = beg + swap1 + middle + swap2 + end ;
+  chars[i1] = chars[i2];
+  chars[i2] = temp;
 
-  return s;
+  return chars.join('');
 }
 
 module.exports = reverseStringInPlace;
