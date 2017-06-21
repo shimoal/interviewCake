@@ -8,6 +8,9 @@ function validateBrackets(string) {
     if (openers[currentChar]) {
       stack.push(currentChar);
     } else if (closers[currentChar]) {
+      if (stack.length <= 0) {
+        return false;
+      }
       var match = stack.pop();
       if (closers[currentChar] !== match) {
         return false;
