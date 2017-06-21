@@ -7,7 +7,13 @@ describe('26.reverseStringInPlace', function() {
     expect(reverseString).to.be.a('function');
   });
 
+  it('should reverse a string with odd number of letters', function() {
+    expect(reverseString('odd')).to.equal('ddo');
+    expect(reverseString('chattycathy')).to.equal('yhtacyttahc');
+  });
+
   it('should reverse a string with even number of letters', function() {
-    expect(reverseString('chattycat')).to.equal('tacyttahc');
-  })
+    expect(reverseString('even')).to.equal('neve');
+    expect(reverseString('electricboogaloo')).to.equal('oolagoobcirtcele');
+  });
 })
