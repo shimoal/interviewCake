@@ -12,7 +12,7 @@ describe('34.wordCloud', function() {
       .to.deep.equal({
         after: 1,
         beating: 1,
-        the: 1,
+        the: 2,
         eggs: 2,
         dana: 1,
         read: 1,
