@@ -3,24 +3,13 @@ function rand5() {
 }
 
 function rand7() {
-  var results = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 1, 2, 3],
-    [4, 5, 6, 7, 1],
-    [2, 3, 4, 5, 6],
-    [7, 0, 0, 0, 0]
-  ];
+  var num = (rand5() - 1) * 5 + rand5();
 
-
-  var row = rand5() - 1;
-  var col = rand5() - 1;
-
-  while (row === 4 && col > 0) {
-    row = rand5() - 1;
-    col = rand5() - 1;
+  while (num > 21) {
+    var num = (rand5() - 1) * 5 + rand5();
   }
 
-  return results[row][col];
+  return num % 7 + 1;
 }
 
 module.exports = rand7;
