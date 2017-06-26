@@ -14,8 +14,8 @@ describe('37.rand5', function() {
   });
 
   it('should return a number between 1 and 5', function() {
-    expect(rand5()).to.be.below(0);
-    expect(rand5()).to.be.at.least(6);
+    expect(rand5()).to.be.at.least(1);
+    expect(rand5()).to.be.below(6);
   });
 
   it('should return a number', function() {
